@@ -63,3 +63,5 @@ BEGIN
     FROM   dates AS d
     WHERE  NOT EXISTS (SELECT 1 FROM [dim].[Date] AS x WHERE x.[date] = d.[date]);
 END
+
+GO

@@ -9,3 +9,5 @@ BEGIN
     EXEC [dim].[usp_load_Date];
     EXEC [fact].[usp_load_Sales];
 END
+
+GO

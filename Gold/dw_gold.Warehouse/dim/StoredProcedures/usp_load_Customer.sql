@@ -29,3 +29,5 @@ BEGIN
     WHERE  s.[customer_id] IS NOT NULL
       AND  NOT EXISTS (SELECT 1 FROM [dim].[Customer] AS d WHERE d.[customer_bk] = s.[customer_id]);
 END
+
+GO

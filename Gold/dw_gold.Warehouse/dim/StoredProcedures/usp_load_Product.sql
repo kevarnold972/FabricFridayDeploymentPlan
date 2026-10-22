@@ -32,3 +32,5 @@ BEGIN
     WHERE  s.[product_id] IS NOT NULL
       AND  NOT EXISTS (SELECT 1 FROM [dim].[Product] AS d WHERE d.[product_bk] = s.[product_id]);
 END
+
+GO
