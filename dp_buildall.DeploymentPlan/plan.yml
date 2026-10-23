@@ -1,0 +1,18 @@
+$schema: https://developer.microsoft.com/json-schemas/fabric/item/deploymentPlan/definition/plan/1.0.0/schema.json
+version: 1.0.0
+groups:
+  - name: lh_bronze_Lakehouse
+    logicalId: a3742448-9635-ab87-4822-7108fa80f483
+  - name: dw_gold_Warehouse
+    logicalId: 6b5b8de1-139a-9775-4730-054beb38444d
+    dependsOn:
+      - groupName: nb ingest sales_SynapseNotebook
+  - name: nb ingest sales_SynapseNotebook
+    logicalId: eba5cfd9-124f-4cd6-8458-8c3ae0c4ede9
+    postActions:
+      - name: nb ingest sales_SynapseNotebook
+        job:
+          type: Execute
+          logicalId: eba5cfd9-124f-4cd6-8458-8c3ae0c4ede9
+    dependsOn:
+      - groupName: lh_bronze_Lakehouse
